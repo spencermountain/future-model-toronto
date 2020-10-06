@@ -1,6 +1,18 @@
 <script>
-  import data from './data'
-  import { Timeline, Label } from '/Users/spencer/mountain/somehow-timeline/src'
+  import columns from './data'
+  import {
+    Timeline,
+    Label,
+    Column,
+    Ticks,
+    Axis
+  } from '/Users/spencer/mountain/somehow-timeline/src'
+  // let columns = [[], [], [], [], []]
+
+  // data.forEach((obj, i) => {
+  //   let col = i % 5
+  //   columns[col].push(obj)
+  // })
 </script>
 
 <style>
@@ -30,13 +42,13 @@
     width: 100%;
     max-width: 100%;
     overflow: hidden;
-    height: 520px;
-    min-height: 520px;
+    height: 420px;
+    min-height: 420px;
     border-top: 4px solid #657da1;
   }
   #slider {
     position: absolute;
-    top: -180px;
+    top: -250px;
     position: absolute;
     left: -2500px;
     z-index: 1;
@@ -98,15 +110,27 @@
 
   <div id="timelinescroll">
     <div id="timeline">
-      <Timeline start="Jan 1 2020" end="Dec 30 2020" height="600" width="500">
-        <Label start="January 1 2020" end="Feb 20 2020" color="pink" dotted={true} label="Typing" />
-        <Label start="Feb 20 2020" end="November 11 2020" color="#6699cc" label="Refactoring" />
-        <Label start="November 11 2020" end="December 20 2020" color="fire" label="Proof-reading" />
+      <Timeline start="jan 1 2008" end="Dec 30 2040" height="400">
+        <Column>
+          <Axis />
+        </Column>
+        {#each columns as col}
+          <Column>
+            {#each col as obj}
+              <Label
+                width="20px"
+                start={obj.start}
+                end={obj.end}
+                color={obj.construction ? 'blue' : '#86b3a7'}
+                label={''}
+                opacity="0.8"
+                size="12px" />
+            {/each}
+          </Column>
+        {/each}
       </Timeline>
     </div>
-    <!-- {#each data as obj}
-      <div style="margin-top:40px;">{obj.name}</div>
-    {/each} -->
+
   </div>
 
   <div id="imgbox">
