@@ -1,5 +1,6 @@
 <script>
   import data from './data'
+  import { Timeline, Label } from '/Users/spencer/mountain/somehow-timeline/src'
 </script>
 
 <style>
@@ -31,12 +32,11 @@
     overflow: hidden;
     height: 520px;
     min-height: 520px;
-    border: 1px solid grey;
+    border-top: 4px solid #657da1;
   }
   #slider {
     position: absolute;
     top: -180px;
-    border: 1px solid grey;
     position: absolute;
     left: -2500px;
     z-index: 1;
@@ -56,30 +56,33 @@
     font-size: 25px;
     top: 10px;
     z-index: 5;
-    color: #50617a;
+    color: #657da1;
   }
   .title {
     font-size: 1rem;
-    color: #50617a;
+    color: #657da1;
     text-align: left;
     align-self: flex-start;
     margin-left: 15px;
     font-size: 0.9rem;
     /* font-family: times new roman; */
   }
-  #timeline {
+  #timelinescroll {
     flex: 1;
     width: 100%;
-    border: 1px solid grey;
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  #timeline {
+    margin-left: 10%;
+    margin-right: 10%;
   }
   #arrow {
     position: absolute;
     left: 50%;
     height: 40px;
     width: 2px;
-    background-color: #50617a;
+    background-color: #657da1;
     top: 60px;
     z-index: 5;
   }
@@ -88,14 +91,22 @@
 <div class="container col">
 
   <div class="title">
-    Toronto contstruction timeline - proof of concept for
+    <b>Toronto contstruction timeline</b>
+    - proof of concept for
     <a href="https://www.stephenvelasco.com/">stephen velasco</a>
   </div>
 
-  <div id="timeline">
-    {#each data as obj}
+  <div id="timelinescroll">
+    <div id="timeline">
+      <Timeline start="Jan 1 2020" end="Dec 30 2020" height="600" width="500">
+        <Label start="January 1 2020" end="Feb 20 2020" color="pink" dotted={true} label="Typing" />
+        <Label start="Feb 20 2020" end="November 11 2020" color="#6699cc" label="Refactoring" />
+        <Label start="November 11 2020" end="December 20 2020" color="fire" label="Proof-reading" />
+      </Timeline>
+    </div>
+    <!-- {#each data as obj}
       <div style="margin-top:40px;">{obj.name}</div>
-    {/each}
+    {/each} -->
   </div>
 
   <div id="imgbox">
