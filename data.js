@@ -3,17 +3,17 @@ module.exports = [
     // green
     {
       name: 'The One',
-      x: 934,
-      height: 996,
+      x: 992,
+      height: 309,
       construction: true,
       start: 'may 24 2008',
-      end: 'july 1 2020',
+      end: 'dec 1 2020',
       link: 'https://urbantoronto.ca/database/projects/one'
     },
     // blue
     {
       name: '625 Church',
-      x: 851,
+      x: 750,
       height: 202,
       construction: false,
       start: 'jan 2021',
@@ -70,7 +70,7 @@ module.exports = [
   [
     {
       name: 'Rosedale on Bloor',
-      x: 366,
+      x: 500,
       height: 186,
       construction: true,
       start: 'March 2019',
@@ -90,7 +90,7 @@ module.exports = [
   [
     {
       name: 'Sky Tower',
-      x: 1927,
+      x: 3127,
       height: 313,
       construction: true,
       start: 'March 1 2020',
@@ -98,7 +98,7 @@ module.exports = [
     },
     {
       name: '1200 Bay',
-      x: 918,
+      x: 1128,
       height: 324,
       construction: false,
       start: 'August 2029',
@@ -107,7 +107,7 @@ module.exports = [
   ],
   [
     {
-      name: 'Cumberland',
+      name: 'Cumberland Square',
       x: 1047,
       height: 238,
       construction: false,
@@ -118,7 +118,7 @@ module.exports = [
   [
     {
       name: '1 Scollard',
-      x: 797,
+      x: 775,
       height: 155,
       construction: false,
       start: 'March 2022',

@@ -9,20 +9,43 @@
     Pill,
     Now
   } from '/Users/spencer/mountain/somehow-timeline/src'
+  let screen = 1000
   // let columns = [[], [], [], [], []]
 
   // data.forEach((obj, i) => {
   //   let col = i % 5
   //   columns[col].push(obj)
   // })
-  let left = -500
+  let left = 0
   const goTo = function(obj) {
-    left = -1 * obj.x //- 5000
+    let half = screen / 2
+    left = -1 * obj.x + half
     name = obj.name
     sub = obj.height + 'm'
   }
   let name = ''
   let sub = ''
+  let list = [
+    500,
+    750,
+    1000,
+    1250,
+    1500,
+    1750,
+    2000,
+    2250,
+    2500,
+    2750,
+    3000,
+    3250,
+    3500,
+    3750,
+    4000,
+    4250,
+    4500,
+    4750,
+    5000
+  ]
 </script>
 
 <style>
@@ -104,7 +127,7 @@
   #arrow {
     position: absolute;
     left: 50%;
-    height: 40px;
+    height: 55px;
     width: 2px;
     background-color: #657da1;
     top: 60px;
@@ -115,9 +138,11 @@
     color: grey;
     font-size: 1rem;
     margin-top: 2px;
-    left: 32px;
+    left: 38px;
   }
 </style>
+
+<svelte:window bind:innerWidth={screen} />
 
 <div class="container col">
 
@@ -128,9 +153,9 @@
     <div>mock construction timeline</div>
   </div>
 
-  <div id="timelinescroll">
+  <div id="timelinescroll" style="max-width:1000px;">
     <div id="timeline">
-      <Timeline start="jan 1 2008" end="Dec 30 2040" height="800">
+      <Timeline start="jan 1 2008" end="Dec 30 2040" height="600">
         <Now />
         <Column>
           <Axis />
@@ -142,7 +167,7 @@
                 width="20px"
                 start={obj.start}
                 end={obj.end}
-                color={obj.construction ? 'blue' : '#86b3a7'}
+                color={obj.construction ? '#86b3a7' : 'blue'}
                 label={obj.name}
                 onClick={() => goTo(obj)}
                 opacity="0.8"
@@ -154,8 +179,11 @@
     </div>
 
   </div>
-  <div>{left}</div>
-  <div id="imgbox">
+  <div>{screen}</div>
+  <div id="imgbox" style="overflow:hidden;">
+    {#each list as num}
+      <div style="position:absolute; left:{num}px; z-index:9;">{num}</div>
+    {/each}
     <div id="label">
       {name}
       <div class="sub">{sub}</div>
@@ -163,7 +191,8 @@
     <div id="arrow" />
     <div class="dir" style="left:20px;">⭠N</div>
     <div class="dir" style="right:20px;">S⭢</div>
-    <div id="slider" style="left:{left}px;">
+    <div id="slider" style="left:{left}px; ">
+
       <img style="min-width:5000px; " src="./assets/from-west.jpeg" alt="" />
     </div>
     <!-- <img style="min-width:5000px;" src="./assets/from-west.jpeg" alt="" /> -->
