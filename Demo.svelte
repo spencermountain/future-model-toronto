@@ -75,17 +75,17 @@
     width: 100%;
     max-width: 100%;
     overflow: hidden;
-    height: 420px;
-    min-height: 420px;
+    height: 370px;
+    min-height: 370px;
     border-top: 4px solid #657da1;
   }
   #slider {
     position: absolute;
-    top: -250px;
+    top: -300px;
     position: absolute;
     /* left: -2500px; */
     z-index: 1;
-    transition: left 2s;
+    transition: left 0.8s;
   }
   .dir {
     position: absolute;
@@ -127,7 +127,7 @@
   #arrow {
     position: absolute;
     left: 50%;
-    height: 55px;
+    height: 45px;
     width: 2px;
     background-color: #657da1;
     top: 60px;
@@ -155,7 +155,7 @@
 
   <div id="timelinescroll" style="max-width:1000px;">
     <div id="timeline">
-      <Timeline start="jan 1 2008" end="Dec 30 2040" height="600">
+      <Timeline start="jan 1 2008" end="Dec 30 2040" height="500">
         <Now />
         <Column>
           <Axis />
@@ -171,7 +171,7 @@
                 label={obj.name}
                 onClick={() => goTo(obj)}
                 opacity="0.8"
-                size="12px" />
+                size="1rem" />
             {/each}
           </Column>
         {/each}
@@ -179,11 +179,7 @@
     </div>
 
   </div>
-  <div>{screen}</div>
   <div id="imgbox" style="overflow:hidden;">
-    {#each list as num}
-      <div style="position:absolute; left:{num}px; z-index:9;">{num}</div>
-    {/each}
     <div id="label">
       {name}
       <div class="sub">{sub}</div>
