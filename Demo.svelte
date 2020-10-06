@@ -5,7 +5,9 @@
     Label,
     Column,
     Ticks,
-    Axis
+    Axis,
+    Pill,
+    Now
   } from '/Users/spencer/mountain/somehow-timeline/src'
   // let columns = [[], [], [], [], []]
 
@@ -13,6 +15,14 @@
   //   let col = i % 5
   //   columns[col].push(obj)
   // })
+  let left = -500
+  const goTo = function(obj) {
+    left = -1 * obj.x //- 5000
+    name = obj.name
+    sub = obj.height + 'm'
+  }
+  let name = ''
+  let sub = ''
 </script>
 
 <style>
@@ -50,8 +60,9 @@
     position: absolute;
     top: -250px;
     position: absolute;
-    left: -2500px;
+    /* left: -2500px; */
     z-index: 1;
+    transition: left 2s;
   }
   .dir {
     position: absolute;
@@ -86,6 +97,7 @@
     overflow-x: hidden;
   }
   #timeline {
+    margin-top: 2rem;
     margin-left: 10%;
     margin-right: 10%;
   }
@@ -98,31 +110,41 @@
     top: 60px;
     z-index: 5;
   }
+  .sub {
+    position: relative;
+    color: grey;
+    font-size: 1rem;
+    margin-top: 2px;
+    left: 32px;
+  }
 </style>
 
 <div class="container col">
 
   <div class="title">
-    <b>Toronto contstruction timeline</b>
-    - proof of concept for
+    <!-- <b>Toronto contstruction timeline</b> -->
+    proof of concept for
     <a href="https://www.stephenvelasco.com/">stephen velasco</a>
+    <div>mock construction timeline</div>
   </div>
 
   <div id="timelinescroll">
     <div id="timeline">
-      <Timeline start="jan 1 2008" end="Dec 30 2040" height="400">
+      <Timeline start="jan 1 2008" end="Dec 30 2040" height="800">
+        <Now />
         <Column>
           <Axis />
         </Column>
         {#each columns as col}
           <Column>
             {#each col as obj}
-              <Label
+              <Pill
                 width="20px"
                 start={obj.start}
                 end={obj.end}
                 color={obj.construction ? 'blue' : '#86b3a7'}
-                label={''}
+                label={obj.name}
+                onClick={() => goTo(obj)}
                 opacity="0.8"
                 size="12px" />
             {/each}
@@ -132,15 +154,18 @@
     </div>
 
   </div>
-
+  <div>{left}</div>
   <div id="imgbox">
-    <div id="label">Toronto City Hall</div>
+    <div id="label">
+      {name}
+      <div class="sub">{sub}</div>
+    </div>
     <div id="arrow" />
     <div class="dir" style="left:20px;">⭠N</div>
     <div class="dir" style="right:20px;">S⭢</div>
-    <div id="slider">
-      <img style="min-width:5000px;" src="./assets/from-west.jpeg" alt="" />
+    <div id="slider" style="left:{left}px;">
+      <img style="min-width:5000px; " src="./assets/from-west.jpeg" alt="" />
     </div>
+    <!-- <img style="min-width:5000px;" src="./assets/from-west.jpeg" alt="" /> -->
   </div>
-  <!-- <img style="min-width:5000px;" src="./assets/from-west.jpeg" alt="" /> -->
 </div>

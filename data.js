@@ -39,33 +39,32 @@ module.exports = [
       start: 'dec 6th 2008',
       end: 'july 2022'
     },
+
     {
-      name: '1 Scollard',
-      x: 797,
-      height: 155,
+      name: 'Chelsea Green',
+      x: 1970,
+      height: 276,
       construction: false,
-      start: 'March 2022',
-      end: 'april 2025'
+      start: 'April 2024',
+      end: 'June 2029'
     }
   ],
   [
     {
-      name: 'Sky Tower',
-      x: 1927,
-      height: 313,
+      name: 'YSL Residences',
+      x: 1933,
+      height: 299,
       construction: true,
-      start: 'March 1 2020',
-      end: 'july 1 2028'
-    }
-  ],
-  [
+      start: 'Jan 22 2018',
+      end: 'July 2024'
+    },
     {
-      name: '11 Bay',
-      x: 3322,
-      height: 270,
+      name: 'Mirvish+Gehry',
+      x: 3218,
+      height: 329,
       construction: false,
-      start: 'June 2025',
-      end: 'April 2032'
+      start: 'Sept 2025',
+      end: 'Aug 2034'
     }
   ],
   [
@@ -77,35 +76,35 @@ module.exports = [
       start: 'March 2019',
       end: 'March 2024'
     },
+
     {
-      name: 'The Hub',
-      x: 3377,
-      height: 304,
+      name: '11 Bay',
+      x: 3322,
+      height: 270,
       construction: false,
-      start: 'June 2026',
-      end: 'April 2034'
+      start: 'June 2025',
+      end: 'April 2032'
     }
   ],
+
   [
     {
-      name: 'YSL',
-      x: 1933,
-      height: 299,
+      name: 'Sky Tower',
+      x: 1927,
+      height: 313,
       construction: true,
-      start: 'Aug 22 2018',
-      end: 'July 2023'
+      start: 'March 1 2020',
+      end: 'july 1 2028'
     },
-
     {
-      name: 'Chelsea Green',
-      x: 1970,
-      height: 276,
+      name: '1200 Bay',
+      x: 918,
+      height: 324,
       construction: false,
-      start: 'April 2023',
-      end: 'June 2027'
+      start: 'August 2029',
+      end: 'sept 2034'
     }
   ],
-
   [
     {
       name: 'Cumberland',
@@ -114,26 +113,24 @@ module.exports = [
       construction: false,
       start: 'April 2021',
       end: 'june 2027'
-    },
-
-    {
-      name: 'Mirvish+Gehry',
-      x: 3218,
-      height: 329,
-      construction: false,
-      start: 'Sept 2025',
-      end: 'Aug 2034'
     }
   ],
-
   [
     {
-      name: '1200 Bay',
-      x: 918,
-      height: 324,
+      name: '1 Scollard',
+      x: 797,
+      height: 155,
       construction: false,
-      start: 'August 2022',
-      end: 'sept 2026'
+      start: 'March 2022',
+      end: 'april 2025'
+    },
+    {
+      name: 'The Hub',
+      x: 3377,
+      height: 304,
+      construction: false,
+      start: 'June 2026',
+      end: 'April 2034'
     }
   ]
 ]
